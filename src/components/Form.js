@@ -1,6 +1,27 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 
 const Form = () => {
+
+    // create state appointment
+    const [appointment, updateAppointment] = useState({
+        pet: '',
+        owner: '',
+        date: '',
+        time: '',
+        symptom: ''
+    });
+
+    const { pet, owner, date, time, symptom } = appointment;
+
+    const handleChange = (e) => {
+        updateAppointment({
+            ...appointment,
+            [e.target.name]: e.target.value
+        });
+    }
+
+
+
     return (
         <Fragment>
             <h2>New Appointment</h2>
@@ -9,37 +30,47 @@ const Form = () => {
                 <label>Pet's Name</label>
                 <input
                     type="text"
-                    name="mascota"
+                    name="pet"
                     className="u-full-width"
                     placeholder="Pet's Name"
+                    onChange={handleChange}
+                    value={pet}
                 />
 
                 <label>Owner's Name</label>
                 <input
                     type="text"
-                    name="propietario"
+                    name="owner"
                     className="u-full-width"
                     placeholder="Owner's Name"
+                    onChange={handleChange}
+                    value={owner}
                 />
 
                 <label>Date</label>
                 <input
                     type="date"
-                    name="fecha"
+                    name="date"
                     className="u-full-width"
+                    onChange={handleChange}
+                    value={date}
                 />
 
                 <label>Time</label>
                 <input
                     type="time"
-                    name="hora"
+                    name="time"
                     className="u-full-width"
+                    onChange={handleChange}
+                    value={time}
                 />
 
                 <label>Symptom</label>
                 <textarea
                     className="u-full-width"
-                    name="Symptom"
+                    name="symptom"
+                    onChange={handleChange}
+                    value={symptom}
                 ></textarea>
 
                 <button
