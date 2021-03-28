@@ -1,6 +1,20 @@
+import { Fragment } from "react";
+
 function App() {
   return (
-    <h1>Appointment Manager</h1>
+    <Fragment>
+      <h1>Appointment Manager</h1>
+      <div className="container">
+        <div className="row">
+          <div className="one-half column">
+            1
+          </div>
+          <div className="one-half column">
+            2
+          </div>
+        </div>
+      </div>
+    </Fragment>
   );
 }
 
