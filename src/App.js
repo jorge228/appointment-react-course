@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import  Form  from './components/Form';
 
 function App() {
   return (
@@ -7,7 +8,7 @@ function App() {
       <div className="container">
         <div className="row">
           <div className="one-half column">
-            1
+            <Form />
           </div>
           <div className="one-half column">
             2
