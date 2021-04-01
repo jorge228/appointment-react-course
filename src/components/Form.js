@@ -13,6 +13,7 @@ const Form = () => {
 
     const { pet, owner, date, time, symptom } = appointment;
 
+    // event when user writes in inpunt
     const handleChange = (e) => {
         updateAppointment({
             ...appointment,
@@ -20,13 +21,25 @@ const Form = () => {
         });
     }
 
+    const submit = (e) =>{
+        e.preventDefault();
+        
+        // validate
 
+        // add id
+
+        // create appointment
+
+        // reset form
+    }
 
     return (
         <Fragment>
             <h2>New Appointment</h2>
 
-            <form>
+            <form
+                onSubmit={submit}
+            >
                 <label>Pet's Name</label>
                 <input
                     type="text"
