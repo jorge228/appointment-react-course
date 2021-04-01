@@ -44,7 +44,7 @@ const Form = () => {
         <Fragment>
             <h2>New Appointment</h2>
 
-            { error ? <p className="alerta-error">Todos los campos son obligatorios</p> : null}
+            { error ? <p className="alerta-error">All fields are required!</p> : null}
 
             <form
                 onSubmit={submit}
