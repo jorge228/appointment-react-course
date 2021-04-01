@@ -11,6 +11,9 @@ const Form = () => {
         symptom: ''
     });
 
+    // create state form error
+    const [error, updateError] = useState(false);
+
     const { pet, owner, date, time, symptom } = appointment;
 
     // event when user writes in inpunt
@@ -21,10 +24,14 @@ const Form = () => {
         });
     }
 
-    const submit = (e) =>{
+    const submit = (e) => {
         e.preventDefault();
-        
+
         // validate
+        if (pet.trim() === '' || owner.trim() === '' || date.trim() === '' || time.trim() === '' || symptom.trim() === '') {
+            updateError(true);
+            return;
+        }
 
         // add id
 
@@ -36,6 +43,8 @@ const Form = () => {
     return (
         <Fragment>
             <h2>New Appointment</h2>
+
+            { error ? <p className="alerta-error">Todos los campos son obligatorios</p> : null}
 
             <form
                 onSubmit={submit}
