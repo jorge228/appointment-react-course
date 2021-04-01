@@ -1,4 +1,6 @@
 import React, { Fragment, useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
+
 
 const Form = () => {
 
@@ -33,11 +35,18 @@ const Form = () => {
             return;
         }
 
+        // if had an error before, updateError for delete message
+        updateError(false);
+
         // add id
+        // https://www.npmjs.com/package/uuid
+        appointment.id = uuidv4();
 
         // create appointment
 
         // reset form
+
+        console.log(appointment);
     }
 
     return (
